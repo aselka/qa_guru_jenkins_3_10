@@ -10,10 +10,9 @@ state = browser.element('#state')
 
 
 def given_opened():
-    browser.open('/automation-practice-form')
-    ads = browser.all('[id^=google_ads_][id$=container__]')
-    if ads.wait.until(have.size_greater_than_or_equal(3)):
-        ads.perform(command.js.remove)
+    browser.config.window_width = 2000
+    browser.config.window_height = 2000
+    browser.open('https://demoqa.com/automation-practice-form')
 
 
 def set_name(value):
